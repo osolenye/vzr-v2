@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>KYRGYZSTAN</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/create_policy.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo_container">
+                <a href="https://www.insurance.kg/">
+                    <img src="../static/Без названия.jpg" alt="">
+                </a>
+            </div>
+
+            <ul class="navbar_buttons">
+                <li class="navbar_button" id="user_info">
+                    <a href="" class="open_exit">
+                        <p>Фамилия</p>
+                        <p>Имя</p>
+                    </a>
+                    <button class="exit_button">Выйти</button>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <h1>Создание полиса</h1>
+
+        <div class="policy_creation">
+            <div class="country_choose">
+                <input class="travel_country" type="text" placeholder="Страна поездки">
+                <div class="countries">
+                    <!-- <a href="" class="country_option">текст</a>
+                    <a href="" class="country_option">текст</a>
+                    <a href="" class="country_option">текст</a> -->
+                </div>
+
+                <div class="travel_goal_wrapper">
+                    <div class="travel_goal">
+                        <span id="travel_goal_text">Цель поездки</span>
+
+
+                        <svg class="arrow_down travel" id="arrow_down_travel" width="9.000000" height="6.000000"
+                            viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="Vector 1" d="M8 0L4 4L0 0" stroke="#0B3C32" stroke-opacity="1.000000"
+                                stroke-width="2.000000" />
+                        </svg>
+                        <svg class="arrow_up travel" id="arrow_up_travel" width="9.000000" height="6.000000"
+                            viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="Vector 1" d="M0 6L4 2L8 6" stroke="#0B3C32" stroke-opacity="1.000000"
+                                stroke-width="2.000000" />
+                        </svg>
+                    </div>
+                    <div class="travel_goal_content" id="travel_goal_content">
+                        <a href="">Деловая</a>
+                        <a href="">Туризм</a>
+                        <a href="">Гостевая</a>
+                        <a href="">Частная</a>
+                        <a href="">Спорт</a>
+                        <a href="">Воссоединение семьи</a>
+                        <a href="">Лечение</a>
+                        <a href="">Учеба</a>
+                        <a href="">Стажировка </a>
+                    </div>
+                </div>
+
+
+                <div class="currency_wrapper">
+                    <div class="currency">
+                        <span id="currency_text">Валюта</span>
+                        <svg class="arrow_down" id="arrow_down_currency" width="9.000000" height="6.000000"
+                            viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="Vector 1" d="M8 0L4 4L0 0" stroke="#0B3C32" stroke-opacity="1.000000"
+                                stroke-width="2.000000" />
+                        </svg>
+
+                        <svg class="arrow_up" id="arrow_up_currency" width="9.000000" height="6.000000"
+                            viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="Vector 1" d="M0 6L4 2L8 6" stroke="#0B3C32" stroke-opacity="1.000000"
+                                stroke-width="2.000000" />
+                        </svg>
+
+                    </div>
+                    <div class="currency_content" id="currency_content">
+                        <a href="">USD</a>
+                        <a href="">KGS</a>
+                        <a href="">EUR</a>
+                        <a href="">KZT</a>
+                    </div>
+                </div>
+
+
+                <div class="dates">
+                    <p class="policy_date_text">Срок действия полиса</p>
+
+                    <form action="" class="form_date">
+                        <div class="linear">
+                            <div class="vertical">
+                                <label for="date_begin" class="label_date">Дата начала</label>
+                                <input type="date" id="date_begin" class="input_date">
+                            </div>
+                            <div class="vertical">
+                                <label for="date_begin" class="label_date">Дата конца</label>
+                                <input type="date" id="date_end" class="input_date">
+                            </div>
+                        </div>
+                    </form>
+                    <p class="insurance_summ_text">Страховая сумма</p>
+                    <div class="insurance_summs">
+                        <form action="" class="form_summs">
+                            <div class="labels_wrapper">
+                                <fieldset>
+                                    <label class="label_summ">
+                                        <div class="checkbox_wrapper">
+                                            <input type="radio" class="input_summ" name="summ_group">
+                                            <span class="custom_checkbox"></span>
+                                            <label class="summ" id="summ_id">30 000</label>
+                                        </div>
+                                    </label>
+                                </fieldset>
+                            </div>
+
+                            <input type="submit" value="Далее" class="submit_button">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/create_policy.js"></script>
+</body>
+
+</html>

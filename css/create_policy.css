@@ -1,0 +1,354 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: rgb(11, 60, 50);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 37px;
+    letter-spacing: 0%;
+    text-align: center;
+    position: relative;
+    margin-top: 24px;
+}
+
+.policy_creation {
+    position: relative;
+    margin-top: 24px;
+    width: 408px;
+    min-height: 200px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    border: 1px solid rgb(11, 60, 50);
+    border-radius: 10px;
+
+    background: rgb(11, 60, 50);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.country_choose {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 40px;
+    align-items: center;
+}
+
+.travel_country {
+    width: 257px;
+    height: 36px;
+    border-radius: 6px;
+
+    background: rgb(255, 255, 255);
+
+    background-image: url(../static/search.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 20px;
+    /* Размер SVG плюс немного дополнительного отступа */
+}
+
+.countries {
+    width: 280px;
+    height: 76px;
+    border-radius: 6px;
+
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.countries a {
+    position: relative;
+    left: 8px;
+    text-decoration: none;
+    color: rgb(11, 60, 50);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.dates {
+    position: relative;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.policy_date_text {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    position: relative;
+}
+
+
+.linear {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.input_date {
+    width: 160px;
+    height: 36px;
+    border-radius: 6px;
+
+    background: rgb(255, 255, 255);
+}
+
+.form_date {
+    position: relative;
+    margin-top: 16px;
+}
+
+.insurance_summ_text {
+    position: relative;
+    margin-top: 24px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.insurance_summs {
+    margin-top: 17px;
+    position: relative;
+    display: flex;
+}
+
+.summ {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.input_summ {
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+}
+
+.label_summ .custom_checkbox {
+    width: 16px;
+    height: 16px;
+    box-sizing: border-box;
+    border: 1px solid rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* top: 3px; */
+}
+
+
+
+.custom_checkbox::before {
+    content: '';
+    position: absolute;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 1.2px;
+    opacity: 0;
+    transform: rotate(45deg);
+}
+
+.custom_checkbox::after {
+    content: '';
+    position: absolute;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 1.2px;
+    opacity: 0;
+    transform: rotate(-45deg);
+}
+
+.input_summ:checked~.custom_checkbox::after,
+.input_summ:checked~.custom_checkbox::before {
+    opacity: 1;
+}
+
+.checkbox_wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.labels_wrapper {
+    display: flex;
+    gap: 17px;
+    flex-wrap: wrap;
+    width: 270px;
+}
+
+fieldset {
+    display: flex;
+    gap: 17px;
+    flex-wrap: wrap;
+    width: 270px;
+    border: none;
+}
+
+.form_summs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submit_button {
+    width: 92px;
+    height: 32px;
+    border-radius: 16px;
+
+    background: rgb(234, 204, 118);
+    color: rgb(11, 60, 50);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-top: 41px;
+}
+
+
+.travel_goal {
+    width: 328px;
+    height: 36px;
+    border: 2px solid rgb(11, 60, 50);
+
+    border-radius: 12px;
+
+    background: rgb(255, 255, 255);
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+}
+
+#arrow_up_travel {
+    display: none;
+}
+
+.travel_goal_content {
+    width: 328px;
+    height: fit-content;
+    border: 2px solid rgb(11, 60, 50);
+
+    border-radius: 4px;
+
+    background: rgb(255, 255, 255);
+
+
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px;
+    display: none;
+}
+
+.travel_goal_content a {
+    color: rgb(11, 60, 50);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: left;
+
+    text-decoration: none;
+}
+
+.travel_goal_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.currency {
+    width: 328px;
+    height: 36px;
+    border-radius: 12px;
+    background: rgb(255, 255, 255);
+
+    padding: 0 8px;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.currency_content {
+    width: 328px;
+    height: fit-content;
+    border: 2px solid rgb(11, 60, 50);
+
+    border-radius: 4px;
+
+    background: rgb(255, 255, 255);
+
+
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px;
+
+    display: none;
+}
+
+.currency_content a {
+    color: rgb(11, 60, 50);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: left;
+
+    text-decoration: none;
+}
+
+#arrow_up_currency {
+    display: none;
+}
+
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label_date {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+    position: relative;
+}

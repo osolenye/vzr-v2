@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYRGYZSTAN</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/insured.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo_container">
+                <a href="https://www.insurance.kg/">
+                    <img src="../static/Без названия.jpg" alt="">
+                </a>
+            </div>
+
+            <ul class="navbar_buttons">
+                <li class="navbar_button" id="user_info">
+                    <a href="" class="open_exit">
+                        <p>Фамилия</p>
+                        <p>Имя</p>
+                    </a>
+                    <button class="exit_button">Выйти</button>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="policy_info">
+            <span>Стоимость полиса составит _________ USD / _________ KGS</span>
+            <span>Период действия полиса с _________ по ________</span>
+            <span>Страна поездки: __________</span>
+            <span>Страховая сумма: ________</span>
+        </div>
+
+        <h2>Застрахованные</h2>
+
+        <div class="insured_block">
+            <form action="" class="insured_info">
+                <div class="vertical">
+                    <input type="text" class="input_insured" placeholder="Фамилия">
+                    <input type="text" class="input_insured" placeholder="Имя">
+                    <input type="text" class="input_insured" placeholder="Отчество">
+                </div>
+                <div class="vertical">
+                    <input type="text" class="input_insured" id="inn" placeholder="ИНН">
+                    <input type="text" class="input_insured" id="passport_numbers" placeholder="Серия и номер паспорта">
+                </div>
+                <div class="vertical">
+                    <input type="text" class="input_insured" id="passport_date" placeholder="Дата выдачи паспорта">
+                    <input type="text" class="input_insured" id="passport_expire" placeholder="Срок действия паспорта">
+                </div>
+                <div class="vertical">
+                    <input type="text" class="input_insured" id="additional_info"
+                        placeholder="Дополнительная информация">
+                    <input type="text" class="input_insured" id="email" placeholder="Email">
+                </div>
+
+                <button type="submit" class="button_submit">Добавить</button>
+            </form>
+        </div>
+
+        <div class="insured_added_container">
+            <div class="insured_add_wrapper">
+                <div class="insured_added">
+                    <div class="vertical insured">
+                        <div class="insured_added_item">Фамилия (латин.)</div>
+                        <div class="insured_added_item">Фамилия (латин.)</div>
+                        <div class="insured_added_item">Фамилия (латин.)</div>
+                    </div>
+                    <div class="vertical insured">
+                        <div class="insured_added_item inn">Фамилия (латин.)</div>
+                        <div class="insured_added_item passport">Фамилия (латин.)</div>
+                    </div>
+                    <button class="button_delete">Удалить</button>
+                </div>
+
+                <div class="insured_added">
+                    <div class="vertical insured">
+                        <div class="insured_added_item">Фамилия (латин.)</div>
+                        <div class="insured_added_item">Фамилия (латин.)</div>
+                        <div class="insured_added_item">Фамилия (латин.)</div>
+                    </div>
+                    <div class="vertical insured">
+                        <div class="insured_added_item inn">Фамилия (латин.)</div>
+                        <div class="insured_added_item passport">Фамилия (латин.)</div>
+                    </div>
+                    <button class="button_delete">Удалить</button>
+                </div>
+
+                <div class="insured_added">
+                    <div class="vertical insured">
+                        <div class="insured_added_item">Фамилия (латин.)</div>
+                        <div class="insured_added_item">Фамилия (латин.)</div>
+                        <div class="insured_added_item">Фамилия (латин.)</div>
+                    </div>
+                    <div class="vertical insured">
+                        <div class="insured_added_item inn">Фамилия (латин.)</div>
+                        <div class="insured_added_item passport">Фамилия (латин.)</div>
+                    </div>
+                    <button class="button_delete">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/insured.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
