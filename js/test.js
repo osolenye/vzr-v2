@@ -291,31 +291,60 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             // Обработка полученных данных
             var additional_info_content = document.getElementById("additional_info_content");
+            var fieldset_rates = document.querySelector(".fieldset_rates");
             data.forEach(function (country) {
-                // Создание элемента <a>
-                const link = document.createElement('a');
+                // Create elements
+                var div = document.createElement("div");
+                div.className = "checkbox_wrapper";
 
-                // Установка текста ссылки
-                link.textContent = country.name;
-                link.classList = "rates";
-                link.id = country.id;
-                // Установка атрибута href
-                link.href = '';
-                // Добавление ссылки в DOM
-                additional_info_content.appendChild(link);
+                var input = document.createElement("input");
+                input.type = "checkbox";
+                input.className = "input_rates";
+                input.name = "rates_group";
+
+                var span = document.createElement("span");
+                span.className = "custom_checkbox";
+
+                var label = document.createElement("label");
+                label.className = "label_rates";
+                label.id = country.id;
+                label.textContent = country.name;
+
+                // Append elements to div
+                div.appendChild(input);
+                div.appendChild(span);
+                div.appendChild(label);
+
+                // Append div to the parent container
+                fieldset_rates.appendChild(div);
             })
 
 
-            const link = document.createElement('a');
+            var additional_info_content_checkboxes = document.getElementById("additional_info_content_checkboxes");
+            var fieldset_additional_info = document.querySelector(".fieldset_additional_info");
+            var category = data[0].category;
+            // Create elements
+            var div = document.createElement("div");
+            div.className = "checkbox_wrapper";
 
-            // Установка текста ссылки
-            link.textContent = data[0].category.name;
-            link.classList = "additional";
-            link.id = data[0].category.id;
-            // Установка атрибута href
-            link.href = '';
-            // Добавление ссылки в DOM
-            additional_info_content.appendChild(link);
+            var input = document.createElement("input");
+            input.type = "checkbox";
+            input.className = "input_rates";
+            input.name = "additional_info_group";
+
+            var span = document.createElement("span");
+            span.className = "custom_checkbox";
+
+            var label = document.createElement("label");
+            label.className = "label_additional_info";
+            label.id = category.id;
+            label.textContent = category.name;
+
+            // Append elements to div
+            div.appendChild(input);
+            div.appendChild(span);
+            div.appendChild(label);
+            fieldset_additional_info.appendChild(div);
 
 
 
@@ -323,7 +352,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var additinal_info_opened = false;
             var additional_info_content = document.getElementById("additional_info_content");
-            var additional_info = document.querySelector(".additional_info_wrapper");
+            // var additional_info = document.querySelector(".additional_info_wrapper");
+            var additional_info = document.querySelector(".additional_info");
             var additional_info_arrow_up = document.getElementById("arrow_up_additional_info");
             var additional_info_arrow_down = document.getElementById("arrow_down_additional_info");
 
@@ -344,27 +374,61 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            var additional_info_content = document.getElementById("additional_info_content");
-            var additional_infos = additional_info_content.querySelectorAll("a");
-            var additional_info_text = document.querySelector("#additional_info_text");
-
-            additional_infos.forEach(function (currency) {
-                currency.addEventListener("click", function (event) {
-                    event.preventDefault();
-
-                    localStorage.setItem("additional_info_type", this.classList.toString());
-                    localStorage.setItem("additional_info_id", this.id);
-
-                    // additional_info_content.style.display = "none";
-                    // additinal_info_opened = false;
 
 
-                    // additional_info_arrow_up.style.display = "none";
-                    // additional_info_arrow_down.style.display = "block";
 
-                    additional_info_text.innerHTML = this.innerText;
-                });
+
+            var additinal_info_checkboxes_opened = false;
+            var additional_info_content_checkboxes = document.getElementById("additional_info_content_checkboxes");
+            var additional_info_checkboxes_wrapper = document.querySelector(".additional_info_checkboxes");
+            var additional_info_arrow_up_checkboxes = document.getElementById("arrow_up_additional_info_checkboxes");
+            var additional_info_arrow_down_checkboxes = document.getElementById("arrow_down_additional_info_checkboxes");
+            var additional_info_content_checkboxes = document.getElementById("additional_info_content_checkboxes");
+
+            additional_info_checkboxes_wrapper.addEventListener("click", function (event) {
+                event.preventDefault();
+
+
+                if (!additinal_info_checkboxes_opened) {
+                    additional_info_content_checkboxes.style.display = "flex";
+                    additinal_info_checkboxes_opened = true;
+
+                    additional_info_arrow_down_checkboxes.style.display = "none";
+                    additional_info_arrow_up_checkboxes.style.display = "block";
+                } else {
+                    additional_info_content_checkboxes.style.display = "none";
+                    additinal_info_checkboxes_opened = false;
+
+
+                    additional_info_arrow_up_checkboxes.style.display = "none";
+                    additional_info_arrow_down_checkboxes.style.display = "block";
+                }
             });
+
+            var additional_checkboxes_infos = additional_info_content_checkboxes.querySelectorAll("a");
+            var additional_info_text = document.querySelector("#additional_info_checkboxes_text");
+
+            // additional_infos.forEach(function (currency) {
+            //     currency.addEventListener("click", function (event) {
+            //         event.preventDefault();
+
+            //         localStorage.setItem("additional_info_type", this.classList.toString());
+            //         localStorage.setItem("additional_info_id", this.id);
+
+            //         // additional_info_content.style.display = "none";
+            //         // additinal_info_opened = false;
+
+
+            //         // additional_info_arrow_up.style.display = "none";
+            //         // additional_info_arrow_down.style.display = "block";
+
+            //         additional_info_text.innerHTML = this.innerText;
+            //     });
+            // });
+
+
+
+
 
         })
         .catch(error => {
@@ -417,13 +481,34 @@ document.addEventListener("DOMContentLoaded", function () {
             currency_letter_code: localStorage.getItem("currency").replace(/\s+/g, ''),
         }]
 
-        var additional_info_type = localStorage.getItem("additional_info_type");
-        var additional_info_id = localStorage.getItem("additional_info_id");
-        if (additional_info_type === "rates") {
-            calculate_price_request[0].rates = [additional_info_id];
-        } else {
-            calculate_price_request[0].additional_info = [additional_info_id];
-        }
+
+        // Находим все элементы с классом "label_rates" внутри fieldset с классом "fieldset_rates"
+        var labels = document.querySelectorAll('.fieldset_rates .label_rates');
+        var rates_array = [];
+
+        // Проходимся по всем найденным элементам label
+        labels.forEach(function (label) {
+            // Получаем значение текстового содержимого элемента label
+            var value = label.id;
+
+            // Делаем что-то с полученным значением
+            rates_array.push(value);
+        });
+
+        var labels_additional_info = document.querySelectorAll('.fieldset_additional_info .label_additional_info');
+        var additional_info_array = [];
+
+        labels_additional_info.forEach(function (label) {
+            // Получаем значение текстового содержимого элемента label
+            var value = label.id;
+
+            // Делаем что-то с полученным значением
+            additional_info_array.push(value);
+        });
+
+        calculate_price_request[0].rates = rates_array;
+        calculate_price_request[0].additional_info = additional_info_array;
+
 
         console.log(JSON.stringify(calculate_price_request));
         const urlCalculatePrice = 'http://212.112.103.137:88/api_business/calculate_price/';

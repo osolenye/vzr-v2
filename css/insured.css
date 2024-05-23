@@ -39,7 +39,8 @@ h2 {
 
 .insured_block {
     width: 602px;
-    height: 334px;
+    height: fit-content;
+    padding-bottom: 40px;
     box-sizing: border-box;
     border: 1px solid rgb(11, 60, 50);
     border-radius: 10px;
@@ -115,9 +116,11 @@ h2 {
     display: flex;
     align-items: center;
 }
+
 .inn {
     width: 260px;
 }
+
 .passport {
     width: 260px;
 }
@@ -128,6 +131,7 @@ h2 {
     gap: 8px;
     margin-top: 10px;
 }
+
 .horizontal {
     display: flex;
     gap: 8px;
@@ -194,7 +198,7 @@ h2 {
 
 
 
-.additional_info{
+.additional_info {
     width: 328px;
     height: 36px;
     border-radius: 12px;
@@ -208,7 +212,7 @@ h2 {
     justify-content: space-between;
 }
 
-.additional_info_content{
+.additional_info_content {
     width: 328px;
     height: fit-content;
     border: 2px solid rgb(11, 60, 50);
@@ -238,4 +242,37 @@ h2 {
 
 #arrow_up_additional_info {
     display: none;
+}
+
+.additional_info_checkboxes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    width: 350px;
+    height: 36px;
+    border-radius: 12px;
+
+    background: rgb(255, 255, 255);
+    padding: 0 8px;
+}
+
+#arrow_up_additional_info_checkboxes {
+    display: none;
+}
+
+
+
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    flex-wrap: wrap;
+    width: 270px;
+    border: none;
+}
+.fieldset_rates {
+    gap: 8px;
 }
