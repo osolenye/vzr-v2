@@ -1,0 +1,241 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    color: rgb(11, 60, 50);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0%;
+    text-align: center;
+
+    margin-top: 42px;
+}
+
+.policy_info {
+    width: 568px;
+    height: 130px;
+    background: rgb(245, 245, 245);
+    margin-top: 48px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 14px;
+    justify-content: center;
+}
+
+.policy_info span {
+    color: rgb(11, 60, 50);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.insured_block {
+    width: 602px;
+    height: 334px;
+    box-sizing: border-box;
+    border: 1px solid rgb(11, 60, 50);
+    border-radius: 10px;
+
+    background: rgb(11, 60, 50);
+    margin-top: 40px;
+
+}
+
+.insured_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 40px;
+}
+
+
+.input_insured {
+    width: 170px;
+    height: 36px;
+    border-radius: 12px;
+
+    background: rgb(255, 255, 255);
+}
+
+.button_submit {
+    width: 120px;
+    height: 32px;
+    border-radius: 16px;
+
+    background: rgb(234, 204, 118);
+
+    color: rgb(11, 60, 50);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+
+    margin-top: 40px;
+}
+
+
+.insured_added {
+    width: 568px;
+    height: 164px;
+    box-sizing: border-box;
+    border: 2px solid rgb(11, 60, 50);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.insured_added_item {
+    width: 170px;
+    height: 36px;
+    box-sizing: border-box;
+    border: 2px solid rgb(11, 60, 50);
+    border-radius: 12px;
+
+    background: rgb(255, 255, 255);
+    color: rgb(11, 60, 50);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+}
+.inn {
+    width: 260px;
+}
+.passport {
+    width: 260px;
+}
+
+
+.vertical {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+.horizontal {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.insured {
+    margin-bottom: 12px;
+}
+
+.insured_add_wrapper {
+    display: flex;
+    gap: 31px;
+    margin-top: 31px;
+
+    width: 1167px;
+    flex-wrap: wrap;
+}
+
+.insured_added_container {
+    margin-top: 40px;
+
+    width: 1167px;
+}
+
+#inn {
+    width: 260px;
+}
+
+#passport_numbers {
+    width: 260px;
+}
+
+#passport_date {
+    width: 260px;
+}
+
+#passport_expire {
+    width: 260px;
+}
+
+#additional_info {
+    width: 350px;
+}
+
+#email {
+    width: 170px;
+}
+
+
+.button_delete {
+    width: 120px;
+    height: 32px;
+    border-radius: 16px;
+
+    background: rgb(11, 60, 50);
+    color: rgb(234, 204, 118);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+
+
+.additional_info{
+    width: 328px;
+    height: 36px;
+    border-radius: 12px;
+    background: rgb(255, 255, 255);
+
+    padding: 0 8px;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.additional_info_content{
+    width: 328px;
+    height: fit-content;
+    border: 2px solid rgb(11, 60, 50);
+
+    border-radius: 4px;
+
+    background: rgb(255, 255, 255);
+
+
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px;
+
+    display: none;
+}
+
+.additional_info_content a {
+    color: rgb(11, 60, 50);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: left;
+
+    text-decoration: none;
+}
+
+#arrow_up_additional_info {
+    display: none;
+}
