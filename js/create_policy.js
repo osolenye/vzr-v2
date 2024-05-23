@@ -148,12 +148,12 @@ form_sums.addEventListener("submit", function (event) {
     localStorage.setItem("date_end", date_end.value);
 
     var formData = {
-        date_begin: date_begin.value,
-        date_end: date_end.value,
-        country: localStorage.getItem("chosen_country_id"),
-        price: localStorage.getItem("chosen_price"),
+        start_date: date_begin.value,
+        end_date: date_end.value,
+        territory: localStorage.getItem("chosen_country_id"),
+        sum_insured: localStorage.getItem("chosen_price"),
         travel_goal: localStorage.getItem("travelGoal"),
-        currency: localStorage.getItem("currency"),
+        currency_letter_code: localStorage.getItem("currency"),
     }
     console.log(JSON.stringify(formData));
 

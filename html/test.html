@@ -3,10 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/create_policy.css">
+    <link rel="stylesheet" href="../css/insured.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Создание полиса</h1>
+
+        <div class="policy_creation">
+            <div class="country_choose">
+                <input class="travel_country" type="text" placeholder="Страна поездки">
+                <div class="countries">
+                    <!-- <a href="" class="country_option">текст</a>
+                    <a href="" class="country_option">текст</a>
+                    <a href="" class="country_option">текст</a> -->
+                </div>
+
+                <div class="travel_goal_wrapper">
+                    <div class="travel_goal">
+                        <span id="travel_goal_text">Цель поездки</span>
+
+
+                        <svg class="arrow_down travel" id="arrow_down_travel" width="9.000000" height="6.000000"
+                            viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="Vector 1" d="M8 0L4 4L0 0" stroke="#0B3C32" stroke-opacity="1.000000"
+                                stroke-width="2.000000" />
+                        </svg>
+                        <svg class="arrow_up travel" id="arrow_up_travel" width="9.000000" height="6.000000"
+                            viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="Vector 1" d="M0 6L4 2L8 6" stroke="#0B3C32" stroke-opacity="1.000000"
+                                stroke-width="2.000000" />
+                        </svg>
+                    </div>
+                    <div class="travel_goal_content" id="travel_goal_content">
+                        <a href="">Деловая</a>
+                        <a href="">Туризм</a>
+                        <a href="">Гостевая</a>
+                        <a href="">Частная</a>
+                        <a href="">Спорт</a>
+                        <a href="">Воссоединение семьи</a>
+                        <a href="">Лечение</a>
+                        <a href="">Учеба</a>
+                        <a href="">Стажировка </a>
+                    </div>
+                </div>
+
+
+                <div class="currency_wrapper">
+                    <div class="currency">
+                        <span id="currency_text">Валюта</span>
+                        <svg class="arrow_down" id="arrow_down_currency" width="9.000000" height="6.000000"
+                            viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="Vector 1" d="M8 0L4 4L0 0" stroke="#0B3C32" stroke-opacity="1.000000"
+                                stroke-width="2.000000" />
+                        </svg>
+
+                        <svg class="arrow_up" id="arrow_up_currency" width="9.000000" height="6.000000"
+                            viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs />
+                            <path id="Vector 1" d="M0 6L4 2L8 6" stroke="#0B3C32" stroke-opacity="1.000000"
+                                stroke-width="2.000000" />
+                        </svg>
+
+                    </div>
+                    <div class="currency_content" id="currency_content">
+                        <a href="">USD</a>
+                        <a href="">KGS</a>
+                        <a href="">EUR</a>
+                        <a href="">KZT</a>
+                    </div>
+                </div>
+
+
+                <div class="dates">
+                    <p class="policy_date_text">Срок действия полиса</p>
+
+                    <form action="" class="form_date">
+                        <div class="linear">
+                            <div class="vertical">
+                                <label for="date_begin" class="label_date">Дата начала</label>
+                                <input type="date" id="date_begin" class="input_date">
+                            </div>
+                            <div class="vertical">
+                                <label for="date_begin" class="label_date">Дата конца</label>
+                                <input type="date" id="date_end" class="input_date">
+                            </div>
+                        </div>
+                    </form>
+                    <p class="insurance_summ_text">Страховая сумма</p>
+                    <div class="insurance_summs">
+                        <form action="" class="form_summs">
+                            <div class="labels_wrapper">
+                                <fieldset>
+                                    <label class="label_summ">
+                                        <div class="checkbox_wrapper">
+                                            <input type="radio" class="input_summ" name="summ_group">
+                                            <span class="custom_checkbox"></span>
+                                            <label class="summ" id="summ_id">30 000</label>
+                                        </div>
+                                    </label>
+                                </fieldset>
+                            </div>
+
+                            <input type="submit" value="Далее" class="submit_button">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="container">
+        <div class="policy_info">
+            <span id="span_1">Стоимость полиса составит _________ USD / _________ KGS</span>
+            <span id="span_2">Период действия полиса с _________ по ________</span>
+            <span id="span_3">Страна поездки: __________</span>
+            <span id="span_4">Страховая сумма: ________</span>
+        </div>
+
+        <h2>Застрахованные</h2>
+
+        <div class="insured_block" id="insured_block">
+            <form action="" class="insured_info">
+                <div class="horizontal">
+                    <input type="text" class="input_insured" id="surname" placeholder="Фамилия">
+                    <input type="text" class="input_insured" id="name" placeholder="Имя">
+                    <input type="text" class="input_insured" id="patronymic" placeholder="Отчество">
+                </div>
+                <div class="horizontal">
+                    <input type="text" class="input_insured" id="inn" placeholder="ИНН">
+                    <input type="text" class="input_insured" id="passport_numbers" placeholder="Серия и номер паспорта">
+                </div>
+                <div class="horizontal">
+                    <input type="text" class="input_insured" id="passport_date" placeholder="Дата выдачи паспорта">
+                    <input type="text" class="input_insured" id="passport_expire" placeholder="Срок действия паспорта">
+                </div>
+                <div class="horizontal">
+                    <!-- <input type="text" class="input_insured" id="additional_info"
+                        placeholder="Дополнительная информация"> -->
+                    <div class="additional_info_wrapper">
+                        <div class="additional_info">
+                            <span id="additional_info_text">Дополнительная информация</span>
+                            <svg class="arrow_down" id="arrow_down_additional_info" width="9.000000" height="6.000000"
+                                viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <desc>
+                                    Created with Pixso.
+                                </desc>
+                                <defs />
+                                <path id="Vector 1" d="M8 0L4 4L0 0" stroke="#0B3C32" stroke-opacity="1.000000"
+                                    stroke-width="2.000000" />
+                            </svg>
+
+                            <svg class="arrow_up" id="arrow_up_additional_info" width="9.000000" height="6.000000"
+                                viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <desc>
+                                    Created with Pixso.
+                                </desc>
+                                <defs />
+                                <path id="Vector 1" d="M0 6L4 2L8 6" stroke="#0B3C32" stroke-opacity="1.000000"
+                                    stroke-width="2.000000" />
+                            </svg>
+
+                        </div>
+                        <div class="additional_info_content" id="additional_info_content">
+                            <!-- <a href="">USD</a>
+                            <a href="">KGS</a>
+                            <a href="">EUR</a>
+                            <a href="">KZT</a> -->
+                        </div>
+                    </div>
+
+
+                    <input type="text" class="input_insured" id="email" placeholder="Email">
+                </div>
+
+                <button type="submit" class="button_submit">Добавить</button>
+            </form>
+        </div>
+
+        <div class="insured_added_container">
+            <div class="insured_add_wrapper">
+                <!-- <div class="insured_added">
+                    <div class="vertical insured">
+                        <div class="insured_added_item">Фамилия</div>
+                        <div class="insured_added_item">Имя</div>
+                        <div class="insured_added_item">Email</div>
+                    </div>
+                    <div class="vertical insured">
+                        <div class="insured_added_item inn">ИНН</div>
+                        <div class="insured_added_item passport">Серия и номер паспорта</div>
+                    </div>
+                    <button class="button_delete">Удалить</button>
+                </div>
+
+                <div class="insured_added">
+                    <div class="vertical insured">
+                        <div class="insured_added_item">Фамилия (латин.)</div>
+                        <div class="insured_added_item">Фамилия (латин.)</div>
+                        <div class="insured_added_item">Фамилия (латин.)</div>
+                    </div>
+                    <div class="vertical insured">
+                        <div class="insured_added_item inn">Фамилия (латин.)</div>
+                        <div class="insured_added_item passport">Фамилия (латин.)</div>
+                    </div>
+                    <button class="button_delete">Удалить</button>
+                </div>
+
+                <div class="insured_added">
+                    <div class="vertical insured">
+                        <div class="insured_added_item">Фамилия (латин.)</div>
+                        <div class="insured_added_item">Фамилия (латин.)</div>
+                        <div class="insured_added_item">Фамилия (латин.)</div>
+                    </div>
+                    <div class="vertical insured">
+                        <div class="insured_added_item inn">Фамилия (латин.)</div>
+                        <div class="insured_added_item passport">Фамилия (латин.)</div>
+                    </div>
+                    <button class="button_delete">Удалить</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
     <script src="../js/test.js"></script>
+    
 </body>
 </html>
