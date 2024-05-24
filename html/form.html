@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            box-sizing: border-box;
+            border: 1px solid rgb(11, 60, 50);
+            border-radius: 10px;
+
+            background: rgb(11, 60, 50);
+            width: 408px;
+            height: fit-content;
+            padding: 40px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .input {
+            width: 260px;
+            height: 36px;
+            border-radius: 12px;
+
+            background: rgb(255, 255, 255);
+        }
+
+        .request_type_wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .request_type {
+            width: 252px;
+            height: 36px;
+            border-radius: 12px;
+
+            background: rgb(255, 255, 255);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8px;
+        }
+
+        .form_bitrix {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button_submit {
+            width: 120px;
+            height: 32px;
+            border-radius: 16px;
+
+            background: rgb(234, 204, 118);
+
+            color: rgb(11, 60, 50);
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 18px;
+            letter-spacing: 0%;
+            text-align: center;
+
+            margin-top: 25px;
+        }
+
+        .request_type_content {
+            width: 260px;
+            height: fit-content;
+            border-radius: 12px;
+
+            background: rgb(255, 255, 255);
+            display: none;
+        }
+
+        .fieldset_request_type {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #arrow_up_request {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block">
+        <form action="" class="form_bitrix">
+            <div class="request_type_wrapper">
+                <div class="request_type">
+                    <span class="request_type_text">
+                        Тип заявки
+                    </span>
+
+
+                    <svg class="arrow_down" id="arrow_down_request" width="9.000000" height="6.000000" viewBox="0 0 9 6"
+                        fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <desc>
+                            Created with Pixso.
+                        </desc>
+                        <defs />
+                        <path id="Vector 1" d="M8 0L4 4L0 0" stroke="#0B3C32" stroke-opacity="1.000000"
+                            stroke-width="2.000000" />
+                    </svg>
+
+                    <svg class="arrow_up" id="arrow_up_request" width="9.000000" height="6.000000" viewBox="0 0 9 6"
+                        fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <desc>
+                            Created with Pixso.
+                        </desc>
+                        <defs />
+                        <path id="Vector 1" d="M0 6L4 2L8 6" stroke="#0B3C32" stroke-opacity="1.000000"
+                            stroke-width="2.000000" />
+                    </svg>
+                </div>
+
+                <div class="request_type_content">
+                    <fieldset class="fieldset_request_type">
+                        <p>Страхование автотранспорта</p>
+                        <div class="checkbox_wrapper">
+                            <input type="checkbox" placeholder="Каско">
+                            <label for="">Каско</label>
+                        </div>
+                        <div class="checkbox_wrapper">
+                            <input type="checkbox" placeholder="ОСАГО">
+                            <label for="">ОСАГО</label>
+                        </div>
+                        <p>Страхование имущества</p>
+                        <div class="checkbox_wrapper">
+                            <input type="checkbox" placeholder="Страхование имущества">
+                            <label for="">Страхование имущества</label>
+                        </div>
+                        <div class="checkbox_wrapper">
+                            <input type="checkbox" placeholder="Страхование грузоперевозок">
+                            <label for="">Страхование грузоперевозок</label>
+                        </div>
+                        <p>Страхование от несчастных случаев</p>
+                        <div class="checkbox_wrapper">
+                            <input type="checkbox" placeholder="Программа «СТАНДАРТ»">
+                            <label for="">Программа «СТАНДАРТ»</label>
+                        </div>
+                        <div class="checkbox_wrapper">
+                            <input type="checkbox" placeholder="Программа «Спорт и активный отдых»">
+                            <label for="">Программа «Спорт и активный отдых»</label>
+                        </div>
+                        <div class="checkbox_wrapper">
+                            <input type="checkbox" placeholder="Программа «ДЛЯ ДЕТЕЙ»">
+                            <label for="">Программа «ДЛЯ ДЕТЕЙ»</label>
+                        </div>
+                        <p>Страхование при выезде за границу</p>
+                        <div class="checkbox_wrapper">
+                            <input type="checkbox" placeholder="Программа «Шенген»">
+                            <label for="">Программа «Шенген»</label>
+                        </div>
+                        <div class="checkbox_wrapper">
+                            <input type="checkbox" placeholder="Программа « США, Израиль , Япония, Великобритания »">
+                            <label for="">Программа « США, Израиль , Япония, Великобритания »</label>
+                        </div>
+                        <div class="checkbox_wrapper">
+                            <input type="checkbox" placeholder="Программа «ВЕСЬ МИР»">
+                            <label for="">Программа «ВЕСЬ МИР»</label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <input type="text" class="input" placeholder="фио">
+            <input type="text" class="input" placeholder="контактный номер">
+            <input type="text" class="input" placeholder="текст заявки">
+
+
+            <button class="button_submit" type="submit">Отправить</button>
+        </form>
+    </div>
+
+    <script>
+        var request_type = document.querySelector('.request_type');
+        var request_type_content = document.querySelector('.request_type_content');
+        var arrow_up_request = document.querySelector('#arrow_up_request');
+        var arrow_down_request = document.querySelector('#arrow_down_request');
+
+
+        var request_type_content_opened = false;
+        request_type.addEventListener('click', function () {
+            if (request_type_content_opened === false) {
+                request_type_content.style.display = 'flex';
+                arrow_up_request.style.display = 'block';
+                arrow_down_request.style.display = 'none';
+                request_type_content_opened = true;
+            } else {
+                request_type_content.style.display = 'none';
+                arrow_up_request.style.display = 'none';
+                arrow_down_request.style.display = 'block';
+                request_type_content_opened = false;
+            }
+        });
+
+        var form_bitrix = document.querySelector('.form_bitrix');
+        form_bitrix.addEventListener('submit', function (event) {
+            event.preventDefault();
+ 
+            const fioInput = document.querySelector('input[placeholder="фио"]');
+            const contactNumberInput = document.querySelector('input[placeholder="контактный номер"]');
+            const applicationTextInput = document.querySelector('input[placeholder="текст заявки"]');
+
+            // Извлекаем значения из текстовых полей
+            const fio = fioInput.value;
+            const contactNumber = contactNumberInput.value;
+            const applicationText = applicationTextInput.value;
+
+            // Получаем все чекбоксы
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+            // Создаем пустой массив для хранения отмеченных чекбоксов
+            const checkedCheckboxes = [];
+
+            // Перебираем каждый чекбокс
+            checkboxes.forEach((checkbox) => {
+                // Проверяем, отмечен ли текущий чекбокс
+                if (checkbox.checked) {
+                    // Если да, добавляем его в массив отмеченных чекбоксов
+                    checkedCheckboxes.push(checkbox.nextElementSibling.textContent);
+                }
+            });
+
+            // Объединяем элементы массива checkedCheckboxes в строку, разделенную запятыми
+            const checkedCheckboxesStr = checkedCheckboxes.join(', ');
+
+            // Создаем объект с данными
+            const requestData = {
+                arNewTaskData: {
+                RESPONSIBLE_ID: 75,
+                TITLE: "связаться с клиентом по вопросу " + checkedCheckboxesStr,
+                DESCRIPTION: "связаться с " + fio + " по контактному номеру " +
+                    contactNumber + " по вопросу страхования по программе " + checkedCheckboxesStr
+            }
+            };
+
+            // Выводим данные в консоль для проверки
+            console.log(JSON.stringify(requestData));
+
+            // URL для отправки POST-запроса
+            const url = 'https://portal.insurance.kg/rest/32/ids30m32y74odp3n/task.item.add.json';
+
+            // Выполняем POST-запрос с использованием fetch
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+
+        })
+    </script>
+</body>
+
+</html>

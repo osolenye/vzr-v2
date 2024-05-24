@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json', // пример заголовка
-            // 'Authorization': 'Bearer ' + localStorage.getItem("accessToken") // пример заголовка с токеном авторизации
-            // Здесь вы можете добавить другие необходимые заголовки
         }
     })
         .then(response => {
@@ -57,78 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     localStorage.setItem("chosen_country_id", chosen_country_id);
                     localStorage.setItem("chosen_country_name", country_option.innerHTML);
                     countries.style.display = "none";
-
-
-
-                    // // URL, к которому будет отправлен GET-запрос
-                    // const url_get_summs = 'https://api.insurance.kg/travel_agency/api/get_insurance_summ/?country=' + chosen_country_id;
-
-                    // // Выполнение GET-запроса с использованием fetch и добавлением заголовков
-                    // fetch(url_get_summs, {
-                    //     method: 'GET',
-                    //     headers: {
-                    //         'Content-Type': 'application/json', // пример заголовка
-                    //         'Authorization': 'Bearer ' + localStorage.getItem("accessToken") // пример заголовка с токеном авторизации
-                    //         // Здесь вы можете добавить другие необходимые заголовки
-                    //     }
-                    // })
-                    //     .then(response => {
-                    //         // Проверка статуса ответа
-                    //         if (!response.ok) {
-                    //             console.log(response.json);
-                    //             throw new Error('Network response was not ok');
-                    //         }
-                    //         // Возвращаем данные в формате JSON
-                    //         return response.json();
-                    //     })
-                    //     .then(data => {
-                    //         // Обработка полученных данных
-                    //         var fieldset = document.querySelector("fieldset");
-
-                    //         // Удаляем все текущие элементы label_summ
-                    //         while (fieldset.firstChild) {
-                    //             fieldset.removeChild(fieldset.firstChild);
-                    //         }
-
-
-                    //         data.forEach(function (summ) {
-
-                    //             // Создаем элементы
-                    //             const label = document.createElement('label');
-                    //             label.classList.add('label_summ');
-
-                    //             const divCheckboxWrapper = document.createElement('div');
-                    //             divCheckboxWrapper.classList.add('checkbox_wrapper');
-
-                    //             const input = document.createElement('input');
-                    //             input.type = 'radio';
-                    //             input.classList.add('input_summ');
-                    //             input.name = 'summ_group';
-
-                    //             const spanCustomCheckbox = document.createElement('span');
-                    //             spanCustomCheckbox.classList.add('custom_checkbox');
-
-                    //             const innerLabel = document.createElement('label');
-                    //             innerLabel.classList.add('summ');
-                    //             innerLabel.textContent = summ.insurance_summ;
-                    //             innerLabel.id = summ.id;
-                    //             localStorage.setItem("chosen_price_id", summ.id);
-
-                    //             // Собираем элементы вместе
-                    //             divCheckboxWrapper.appendChild(input);
-                    //             divCheckboxWrapper.appendChild(spanCustomCheckbox);
-                    //             divCheckboxWrapper.appendChild(innerLabel);
-
-                    //             label.appendChild(divCheckboxWrapper);
-
-                    //             // Добавляем созданный элемент в DOM
-                    //             fieldset.appendChild(label);
-                    //         });
-                    //     })
-                    //     .catch(error => {
-                    //         // Обработка ошибок
-                    //         console.error('There was a problem with the fetch operation:', error);
-                    //     });
                 });
             });
             travel_country.addEventListener("focus", function () {
@@ -276,8 +202,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
+
     // URL, к которому будет выполняться GET-запрос
-    const url1 = 'https://api.insurance.kg/crm_test/api_business/additional_info_list/';
+    // const url1 = 'https://api.insurance.kg/crm_test/api_business/additional_info_list/';
+    const url1 = 'https://api.insurance.kg/crm_test/api_business/rates/';
 
     // Выполнение GET-запроса с помощью fetch
     fetch(url1)
@@ -291,6 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(data => {
             // Обработка полученных данных
+            console.log(data);
             var additional_info_content = document.getElementById("additional_info_content");
             var fieldset_rates = document.querySelector(".fieldset_rates");
             data.forEach(function (country) {
@@ -309,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 var label = document.createElement("label");
                 label.className = "label_rates";
                 label.id = country.id;
-                label.textContent = country.name;
+                label.textContent = country.condition;
 
                 // Append elements to div
                 div.appendChild(input);
@@ -320,40 +251,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 fieldset_rates.appendChild(div);
             })
 
-
-            var additional_info_content_checkboxes = document.getElementById("additional_info_content_checkboxes");
-            var fieldset_additional_info = document.querySelector(".fieldset_additional_info");
-            var category = data[0].category;
-            // Create elements
-            var div = document.createElement("div");
-            div.className = "checkbox_wrapper";
-
-            var input = document.createElement("input");
-            input.type = "checkbox";
-            input.className = "input_rates";
-            input.name = "additional_info_group";
-
-            var span = document.createElement("span");
-            span.className = "custom_checkbox";
-
-            var label = document.createElement("label");
-            label.className = "label_additional_info";
-            label.id = category.id;
-            label.textContent = category.name;
-
-            // Append elements to div
-            div.appendChild(input);
-            div.appendChild(span);
-            div.appendChild(label);
-            fieldset_additional_info.appendChild(div);
-
-
-
-
-
             var additinal_info_opened = false;
             var additional_info_content = document.getElementById("additional_info_content");
-            // var additional_info = document.querySelector(".additional_info_wrapper");
             var additional_info = document.querySelector(".additional_info");
             var additional_info_arrow_up = document.getElementById("arrow_up_additional_info");
             var additional_info_arrow_down = document.getElementById("arrow_down_additional_info");
@@ -375,61 +274,37 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
+            var additional_info_content = document.getElementById("additional_info_content");
+            var additional_infos = additional_info_content.querySelectorAll("a");
+            var additional_info_text = document.querySelector("#additional_info_text");
+
+            additional_infos.forEach(function (currency) {
+                currency.addEventListener("click", function (event) {
+                    event.preventDefault();
+
+                    localStorage.setItem("additional_info_type", this.className);
+                    localStorage.setItem("additional_info_id", this.id);
+                    console.log('Выбрано:', this.innerText);
+                    console.log('Выбрано:', this.className);
+
+                    // additional_info_content.style.display = "none";
+                    // additinal_info_opened = false;
 
 
+                    // additional_info_arrow_up.style.display = "none";
+                    // additional_info_arrow_down.style.display = "block";
 
-
-            var additinal_info_checkboxes_opened = false;
-            var additional_info_content_checkboxes = document.getElementById("additional_info_content_checkboxes");
-            var additional_info_checkboxes_wrapper = document.querySelector(".additional_info_checkboxes");
-            var additional_info_arrow_up_checkboxes = document.getElementById("arrow_up_additional_info_checkboxes");
-            var additional_info_arrow_down_checkboxes = document.getElementById("arrow_down_additional_info_checkboxes");
-            var additional_info_content_checkboxes = document.getElementById("additional_info_content_checkboxes");
-
-            additional_info_checkboxes_wrapper.addEventListener("click", function (event) {
-                event.preventDefault();
-
-
-                if (!additinal_info_checkboxes_opened) {
-                    additional_info_content_checkboxes.style.display = "flex";
-                    additinal_info_checkboxes_opened = true;
-
-                    additional_info_arrow_down_checkboxes.style.display = "none";
-                    additional_info_arrow_up_checkboxes.style.display = "block";
-                } else {
-                    additional_info_content_checkboxes.style.display = "none";
-                    additinal_info_checkboxes_opened = false;
-
-
-                    additional_info_arrow_up_checkboxes.style.display = "none";
-                    additional_info_arrow_down_checkboxes.style.display = "block";
-                }
+                });
             });
+
+
+
+
+
+
 
             var additional_checkboxes_infos = additional_info_content_checkboxes.querySelectorAll("a");
             var additional_info_text = document.querySelector("#additional_info_checkboxes_text");
-
-            // additional_infos.forEach(function (currency) {
-            //     currency.addEventListener("click", function (event) {
-            //         event.preventDefault();
-
-            //         localStorage.setItem("additional_info_type", this.classList.toString());
-            //         localStorage.setItem("additional_info_id", this.id);
-
-            //         // additional_info_content.style.display = "none";
-            //         // additinal_info_opened = false;
-
-
-            //         // additional_info_arrow_up.style.display = "none";
-            //         // additional_info_arrow_down.style.display = "block";
-
-            //         additional_info_text.innerHTML = this.innerText;
-            //     });
-            // });
-
-
-
-
 
         })
         .catch(error => {
@@ -442,9 +317,111 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+    // URL, к которому будет выполнен запрос
+    const url_additional_info = 'https://api.insurance.kg/crm_test/api_business/additional_info_list/';
+
+    // Выполнение GET-запроса
+    fetch(url_additional_info)
+        .then(response => {
+            // Проверка на успешный ответ
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            // Преобразование ответа в JSON
+            return response.json();
+        })
+        .then(data => {
+            // Работа с полученными данными
+            console.log(data);
+            var additional_info_content_checkboxes = document.getElementById("additional_info_content_checkboxes");
+            var fieldset_additional_info = document.querySelector(".fieldset_additional_info");
+            data.forEach(function (category) {
+
+                // Create elements
+                var div = document.createElement("div");
+                div.className = "checkbox_wrapper";
+
+                var input = document.createElement("input");
+                input.type = "checkbox";
+                input.className = "input_rates";
+                input.name = "additional_info_group";
+
+                var span = document.createElement("span");
+                span.className = "custom_checkbox";
+
+                var label = document.createElement("label");
+                label.className = "label_additional_info";
+                label.id = category.id;
+                label.textContent = category.name;
+
+                // Append elements to div
+                div.appendChild(input);
+                div.appendChild(span);
+                div.appendChild(label);
+                fieldset_additional_info.appendChild(div);
+
+            });
 
 
 
+
+            // var additinal_info_opened = false;
+            // var additional_info_content = document.getElementById("additional_info_content");
+            // // var additional_info = document.querySelector(".additional_info_wrapper");
+            // var additional_info = document.querySelector(".additional_info");
+            // var additional_info_arrow_up = document.getElementById("arrow_up_additional_info");
+            // var additional_info_arrow_down = document.getElementById("arrow_down_additional_info");
+
+            // additional_info.addEventListener("click", function () {
+            //     if (!additinal_info_opened) {
+            //         additional_info_content.style.display = "flex";
+            //         additinal_info_opened = true;
+
+            //         additional_info_arrow_down.style.display = "none";
+            //         additional_info_arrow_up.style.display = "block";
+            //     } else {
+            //         additional_info_content.style.display = "none";
+            //         additinal_info_opened = false;
+
+
+            //         additional_info_arrow_up.style.display = "none";
+            //         additional_info_arrow_down.style.display = "block";
+            //     }
+            // });
+
+
+            // var additinal_info_checkboxes_opened = false;
+            // var additional_info_content_checkboxes = document.getElementById("additional_info_content_checkboxes");
+            // var additional_info_checkboxes_wrapper = document.querySelector(".additional_info_checkboxes");
+            // var additional_info_arrow_up_checkboxes = document.getElementById("arrow_up_additional_info_checkboxes");
+            // var additional_info_arrow_down_checkboxes = document.getElementById("arrow_down_additional_info_checkboxes");
+            // var additional_info_content_checkboxes = document.getElementById("additional_info_content_checkboxes");
+
+            // additional_info_checkboxes_wrapper.addEventListener("click", function (event) {
+            //     event.preventDefault();
+
+
+            //     if (!additinal_info_checkboxes_opened) {
+            //         additional_info_content_checkboxes.style.display = "flex";
+            //         additinal_info_checkboxes_opened = true;
+
+            //         additional_info_arrow_down_checkboxes.style.display = "none";
+            //         additional_info_arrow_up_checkboxes.style.display = "block";
+            //     } else {
+            //         additional_info_content_checkboxes.style.display = "none";
+            //         additinal_info_checkboxes_opened = false;
+
+
+            //         additional_info_arrow_up_checkboxes.style.display = "none";
+            //         additional_info_arrow_down_checkboxes.style.display = "block";
+            //     }
+            // });
+
+        })
+        .catch(error => {
+            // Обработка ошибок
+            console.error('There was a problem with the fetch operation:', error);
+        });
 
 
     var insured_add_wrapper = document.querySelector(".insured_add_wrapper");
@@ -488,29 +465,30 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("date_end", date_end.value);
 
 
-        // Находим все элементы с классом "label_rates" внутри fieldset с классом "fieldset_rates"
-        var labels = document.querySelectorAll('.fieldset_rates .label_rates');
+
+        var inputs = document.querySelectorAll('.fieldset_rates .input_rates');
         var rates_array = [];
 
-        // Проходимся по всем найденным элементам label
-        labels.forEach(function (label) {
-            // Получаем значение текстового содержимого элемента label
-            var value = label.id;
-
-            // Делаем что-то с полученным значением
-            rates_array.push(value);
+        inputs.forEach(function (input) {
+            if (input.checked) {
+                var label = input.nextElementSibling.nextElementSibling;
+                var value = label.id;
+                rates_array.push(value);
+            }
         });
 
-        var labels_additional_info = document.querySelectorAll('.fieldset_additional_info .label_additional_info');
+
+        var additional_inputs = document.querySelectorAll('.fieldset_additional_info .input_rates');
         var additional_info_array = [];
 
-        labels_additional_info.forEach(function (label) {
-            // Получаем значение текстового содержимого элемента label
-            var value = label.id;
-
-            // Делаем что-то с полученным значением
-            additional_info_array.push(value);
+        additional_inputs.forEach(function (input) {
+            if (input.checked) {
+                var label = input.nextElementSibling.nextElementSibling;
+                var value = label.id;
+                additional_info_array.push(value);
+            }
         });
+
 
         calculate_price_request[0].rates = rates_array;
         calculate_price_request[0].additional_info = additional_info_array;

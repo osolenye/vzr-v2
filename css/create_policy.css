@@ -172,7 +172,7 @@ h1 {
     content: '';
     position: absolute;
     background-color: #FFFFFF;
-    width: 100%;
+    width: 1px;
     height: 1.2px;
     opacity: 0;
     transform: rotate(45deg);
@@ -182,7 +182,7 @@ h1 {
     content: '';
     position: absolute;
     background-color: #FFFFFF;
-    width: 100%;
+    width: 1px;
     height: 1.2px;
     opacity: 0;
     transform: rotate(-45deg);
