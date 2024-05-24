@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     travel_country.value = country_option.innerHTML;
                     chosen_country_id = country_option.id;
                     localStorage.setItem("chosen_country_id", chosen_country_id);
+                    localStorage.setItem("chosen_country_name", country_option.innerHTML);
                     countries.style.display = "none";
 
 
@@ -481,6 +482,11 @@ document.addEventListener("DOMContentLoaded", function () {
             currency_letter_code: localStorage.getItem("currency").replace(/\s+/g, ''),
         }]
 
+        var date_begin = document.getElementById("date_begin");
+        var date_end = document.getElementById("date_end");
+        localStorage.setItem("date_begin", date_begin.value);
+        localStorage.setItem("date_end", date_end.value);
+
 
         // Находим все элементы с классом "label_rates" внутри fieldset с классом "fieldset_rates"
         var labels = document.querySelectorAll('.fieldset_rates .label_rates');
@@ -532,6 +538,17 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(data => {
                 console.log('Success:', data); // Обработка данных ответа
+                var span_1 = document.getElementById('span_1');
+                var span_2 = document.getElementById('span_2');
+                var span_3 = document.getElementById('span_3');
+                var span_4 = document.getElementById('span_4');
+
+
+                span_1.innerText = "Cтоимость полиса составит " + data.insurance_premium + localStorage.getItem("currency");
+                span_2.innerText = "Период действия полиса с " + localStorage.getItem("date_begin") + " по " + localStorage.getItem("date_end");
+                span_3.innerText = "Страна поездки: " + localStorage.getItem("chosen_country_name");
+                span_4.innerText = "Страховая сумма: " + localStorage.getItem("chosen_price");
+
             })
             .catch(error => {
                 console.error('Error:', error); // Обработка ошибок
