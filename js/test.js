@@ -461,6 +461,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var date_begin = document.getElementById("date_begin");
         var date_end = document.getElementById("date_end");
+
+        var date_begin_formed = new Date(date_begin.value);
+        var date_end_formed = new Date(date_end.value);
+        console.log(date_begin_formed);
+        console.log(date_end_formed);
+        var policy_date_error = document.getElementById("policy_date_error");
+        if (date_begin_formed > date_end_formed) {
+            alert("Начальная дата не может быть больше конечной");
+            policy_date_error.style.display = "block";
+            window.location.href = "test.html#policy_date_error";
+            return;
+        } else if(date_end_formed - date_begin_formed > 365) {
+            alert("Максимальный период действия полиса - 365 дня");
+            policy_date_error.style.display = "block";
+            window.location.href = "test.html#policy_date_error";
+            return;
+        } else {
+            policy_date_error.style.display = "none";
+        }
         localStorage.setItem("date_begin", date_begin.value);
         localStorage.setItem("date_end", date_end.value);
 
