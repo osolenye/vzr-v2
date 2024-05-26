@@ -548,6 +548,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             })
             .catch(error => {
+                alert("Возникла ошибка при расчёте страховой суммы! Заполните все поля!");
                 console.error('Error:', error); // Обработка ошибок
             });
 

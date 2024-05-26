@@ -113,11 +113,11 @@
                         <div class="linear">
                             <div class="vertical">
                                 <label for="date_begin" class="label_date">Дата начала</label>
-                                <input type="date" id="date_begin" class="input_date">
+                                <input type="date" id="date_begin" class="input_date" required>
                             </div>
                             <div class="vertical">
                                 <label for="date_begin" class="label_date">Дата конца</label>
-                                <input type="date" id="date_end" class="input_date">
+                                <input type="date" id="date_end" class="input_date" required>
                             </div>
                         </div>
                     </form>
@@ -158,17 +158,17 @@
         <div class="insured_block" id="insured_block">
             <form action="" class="insured_info">
                 <div class="horizontal">
-                    <input type="text" class="input_insured" id="surname" placeholder="Фамилия">
-                    <input type="text" class="input_insured" id="name" placeholder="Имя">
-                    <input type="text" class="input_insured" id="patronymic" placeholder="Отчество">
+                    <input type="text" class="input_insured" id="surname" placeholder="Фамилия" required>
+                    <input type="text" class="input_insured" id="name" placeholder="Имя" required>
+                    <input type="text" class="input_insured" id="patronymic" placeholder="Отчество" required>
                 </div>
                 <div class="horizontal">
-                    <input type="text" class="input_insured" id="inn" placeholder="ИНН">
-                    <input type="text" class="input_insured" id="passport_numbers" placeholder="Серия и номер паспорта">
+                    <input type="text" class="input_insured" id="inn" placeholder="ИНН" required>
+                    <input type="text" class="input_insured" id="passport_numbers" placeholder="Серия и номер паспорта" required>
                 </div>
                 <div class="horizontal">
-                    <input type="text" class="input_insured" id="passport_date" placeholder="Дата выдачи паспорта">
-                    <input type="text" class="input_insured" id="passport_expire" placeholder="Срок действия паспорта">
+                    <input type="text" class="input_insured" id="passport_date" placeholder="Дата выдачи паспорта" required>
+                    <input type="text" class="input_insured" id="passport_expire" placeholder="Срок действия паспорта" required>
                 </div>
                 <div class="horizontal">
                     <!-- <input type="text" class="input_insured" id="additional_info"
@@ -211,7 +211,7 @@
                     </div>
 
 
-                    <input type="text" class="input_insured" id="email" placeholder="Email">
+                    <input type="text" class="input_insured" id="email" placeholder="Email" required>
                 </div>
 
 
